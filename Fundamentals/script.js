@@ -1,7 +1,6 @@
 /* GSAP : The GreenSock Animation Platform (GSAP for short) is a powerful JavaScript library 
   that enables front-end developers and designers to create robust timeline based animations. */
 
-
 /* gsap.to("#box", {
 import { gsap } from 'gsap'
     x: 900,
@@ -25,7 +24,6 @@ import { gsap } from 'gsap'
     scale: 0.5,
 }) */
 
-
 /* gsap.to("h1", {
     x: 600,
     color: "orange",
@@ -45,7 +43,6 @@ gsap.to("h3", {
     delay: 3,
 }) */
 
-
 /* gsap.to("h1", {
   x: 600,
   deuration: 1,
@@ -55,9 +52,8 @@ gsap.to("h3", {
   yoyo: true, // reverse the animation
 }); */
 
-
 // using timeline
-let tl = gsap.timeline();
+/* let tl = gsap.timeline();
 
 tl.to("h1", {
   x: 600,
@@ -70,4 +66,25 @@ tl.to("h2", {
 tl.to("h3", {
   x: 800,
   duration: 1,
+}); */
+
+gsap.from("#page1 #box", {
+  scale: 0,
+  delay: 0.8,
+  duration: 1,
+  rotate: 360,
+});
+gsap.from("#page2 #box", {
+  scale: 0,
+  delay: 0.8,
+  duration: 1,
+  rotate: 360,
+  scrollTrigger: {
+    trigger: "#page2 #box",
+    scroller: "body",
+    markers: true, // for understanding the trigger
+    start: "top 70%",
+    end: "bottom 30%",
+    scrub: 3,
+  },
 });
